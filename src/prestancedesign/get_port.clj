@@ -1,4 +1,4 @@
-(ns PrestanceDesign.get-port
+(ns prestancedesign.get-port
   (:import (java.net ServerSocket BindException)))
 
 (def range-port {:from 3000 :to 3005})

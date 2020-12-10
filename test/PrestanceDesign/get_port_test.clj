@@ -1,6 +1,6 @@
-(ns PrestanceDesign.get-port-test
+(ns prestancedesign.get-port-test
   (:require [clojure.test :refer :all]
-            [PrestanceDesign.get-port :refer :all])
+            [prestancedesign.get-port :refer :all])
   (:import (java.net ServerSocket BindException)))
 
 (deftest get-available-port-test

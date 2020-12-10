@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>PrestanceDesign</groupId>
+  <groupId>prestancedesign</groupId>
   <artifactId>get-port</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <name>get-port</name>
   <description>FIXME: my new library.</description>
-  <url>https://github.com/PrestanceDesign/get-port</url>
+  <url>https://github.com/prestancedesign/get-port</url>
   <licenses>
     <license>
       <name>Eclipse Public License</name>
@@ -19,9 +19,9 @@
     </developer>
   </developers>
   <scm>
-    <url>https://github.com/PrestanceDesign/get-port</url>
-    <connection>scm:git:git://github.com/PrestanceDesign/get-port.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/PrestanceDesign/get-port.git</developerConnection>
+    <url>https://github.com/prestancedesign/get-port</url>
+    <connection>scm:git:git://github.com/prestancedesign/get-port.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/prestancedesign/get-port.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
   <dependencies>

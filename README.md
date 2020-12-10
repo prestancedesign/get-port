@@ -8,7 +8,7 @@ FIXME: write usage documentation!
 
 Invoke a library API function from the command-line:
 
-    $ clojure -X PrestanceDesign.get-port/foo :a 1 :b '"two"'
+    $ clojure -X prestancedesign.get-port/foo :a 1 :b '"two"'
     {:a 1, :b "two"} "Hello, World!"
 
 Run the project's tests (they'll fail until you edit them):
