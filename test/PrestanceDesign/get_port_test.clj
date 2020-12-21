@@ -15,7 +15,9 @@
     (let [port (get-available-port)]
       (is (and (< port 65536) (> port 0)))))
   (testing "Test binding a specified port"
-    (is (= 3001 (get-available-port 3001)))))
+    (is (= 3001 (get-available-port 3001))))
+  (testing "Test binding an already used port"
+    (is (thrown? java.net.BindException (get-available-port 3000)))))
 
 (deftest get-port-in-range-test
   (testing "Test binding a port available from a range"
