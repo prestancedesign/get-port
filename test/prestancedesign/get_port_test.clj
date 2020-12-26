@@ -23,6 +23,6 @@
   (testing "Test binding a port available from a range"
     (is (= 3001 (get-port-in-range [3000 3005])))))
 
-(deftest get-port-in-list-tests
-  (testing "jkj"
+(deftest get-port-in-list-test
+  (testing "Test binding a port available from a list of predefined port"
     (is (= 3004 (get-port-in-list [3000 3004 3010])))))
