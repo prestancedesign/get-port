@@ -1,6 +1,6 @@
 (ns prestancedesign.get-port-test
   (:require [clojure.test :refer [deftest testing is use-fixtures]]
-            [prestancedesign.get-port :refer [get-available-port get-port-in-range]])
+            [prestancedesign.get-port :refer [get-available-port get-port-in-range get-port-in-list]])
   (:import (java.net ServerSocket BindException)))
 
 (defn port-binding-setup [f]
@@ -21,4 +21,8 @@
 
 (deftest get-port-in-range-test
   (testing "Test binding a port available from a range"
-    (is (= 3001 (get-port-in-range {:from 3000 :to 3005})))))
+    (is (= 3001 (get-port-in-range [3000 3005])))))
+
+(deftest get-port-in-list-tests
+  (testing "jkj"
+    (is (= 3004 (get-port-in-list [3000 3004 3010])))))
