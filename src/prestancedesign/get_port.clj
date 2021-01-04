@@ -26,9 +26,6 @@
   (get-port {:port [3000 3004 3010]})
   (get-port {:port (make-range 3000 3005)})
 
-  (get-available-port 3001)
-  (get-available-port)
-
   ;; Bind a range of port for testing
   (for [port (range 3000 3005)]
     (try
