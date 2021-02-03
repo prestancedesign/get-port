@@ -1,17 +1,17 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+ :deps {org.clojure/clojure {:mvn/version "1.10.2"}}
  :aliases
  {:test {:extra-paths ["test"]
-         :extra-deps {org.clojure/test.check {:mvn/version "1.0.0"}}}
+         :extra-deps {org.clojure/test.check {:mvn/version "1.1.0"}}}
   :runner
   {:extra-deps {com.cognitect/test-runner
                 {:git/url "https://github.com/cognitect-labs/test-runner"
                  :sha "b6b3193fcc42659d7e46ecd1884a228993441182"}}
    :main-opts ["-m" "cognitect.test-runner"
                "-d" "test"]}
-  :jar {:extra-deps {seancorfield/depstar {:mvn/version "1.1.128"}}
+  :jar {:extra-deps {seancorfield/depstar {:mvn/version "2.0.171"}}
         :main-opts ["-m" "hf.depstar.jar" "get-port.jar"]}
-  :install {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.1"}}
+  :install {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}
             :main-opts ["-m" "deps-deploy.deps-deploy" "install" "get-port.jar"]}
-  :deploy {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.1"}}
+  :deploy {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}
            :main-opts ["-m" "deps-deploy.deps-deploy" "deploy" "get-port.jar"]}}}
