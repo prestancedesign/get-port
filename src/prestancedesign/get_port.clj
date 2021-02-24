@@ -2,8 +2,7 @@
   (:import (java.net ServerSocket BindException)))
 
 (defn- get-available-port [& [port]]
-  (let [socket (ServerSocket. (or port 0))]
-    (.close socket)
+  (with-open [socket (ServerSocket. (or port 0))]
     (.getLocalPort socket)))
 
 (defn make-range [from to]
