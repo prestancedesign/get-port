@@ -8,44 +8,40 @@ The latest versions on Clojar
 
 ## Installation
 
-You can add `get-port` to your project with either:
+For `deps.edn`:
 
 ```clojure
-prestancedesign/get-port {:mvn/version "1.0.0"}
+prestancedesign/get-port {:mvn/version "0.1.0"}
 ```
-for `deps.edn` or:
+For `project.clj`:
 
 ```clojure
-[prestancedesign/get-port "1.0.0"]
+[prestancedesign/get-port "0.1.0"]
 ```
-for `project.clj` or `build.boot`.
 
 ## Usage
 
-FIXME: write usage documentation!
+```clojure
+(ns hello-world.core
+  (:require [prestancedesign.get-port :refer [get-port]]
+            [ring.adapter.jetty :as server]))
 
-Invoke a library API function from the command-line:
+...
 
-    $ clojure -X prestancedesign.get-port/foo :a 1 :b '"two"'
-    {:a 1, :b "two"} "Hello, World!"
+(server/run-jetty handler {:port (get-port)}) ; Get a random port
+```
 
-Run the project's tests (they'll fail until you edit them):
+Pass in a preferred port:
 
-    $ clojure -M:test:runner
+    (get-port {:port 3000})
 
-Build a deployable jar of this library:
+Pass in an array of preferred ports:
 
-    $ clojure -M:jar
+    (get-port {:port [3000 3004 3010]})
 
-Install it locally:
+Use the `make-range` helper in case you need a port in a certain range:
 
-    $ clojure -M:install
-
-Deploy it to Clojars -- needs `CLOJARS_USERNAME` and `CLOJARS_PASSWORD` environment variables:
-
-    $ clojure -M:deploy
-
-## License
+    (get-port {:port (make-range 3000 3005)})
 
 Copyright © 2020 Michaël SALIHI
 
