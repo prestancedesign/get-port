@@ -1,6 +1,24 @@
 # get-port
 
-FIXME: my new library.
+Get an available TCP port for Clojure.
+
+The latest versions on Clojar
+
+[![Clojars Project](https://clojars.org/prestancedesign/get-port/latest-version.svg)](https://clojars.org/prestancedesign/get-port)
+
+## Installation
+
+You can add `get-port` to your project with either:
+
+```clojure
+prestancedesign/get-port {:mvn/version "1.0.0"}
+```
+for `deps.edn` or:
+
+```clojure
+[prestancedesign/get-port "1.0.0"]
+```
+for `project.clj` or `build.boot`.
 
 ## Usage
 
@@ -29,7 +47,6 @@ Deploy it to Clojars -- needs `CLOJARS_USERNAME` and `CLOJARS_PASSWORD` environm
 
 ## License
 
-Copyright © 2020 Mike
+Copyright © 2020 Michaël SALIHI
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License, the same as Clojure.
