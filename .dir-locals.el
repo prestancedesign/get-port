@@ -1,1 +1,1 @@
-((clojure-mode . ((cider-clojure-cli-global-options . "-M:test"))))
+((clojure-mode . ((cider-clojure-cli-global-options . "-A:test"))))
