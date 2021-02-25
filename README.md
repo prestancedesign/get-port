@@ -49,6 +49,6 @@ Use the `make-range` helper in case you need a port in a certain (inclusive) ran
 (get-port {:port (make-range 3000 3005)})
 ```
 
-Copyright © 2020 Michaël SALIHI
+Copyright © 2020-2021 Michaël SALIHI
 
 Distributed under the Eclipse Public License, the same as Clojure.
