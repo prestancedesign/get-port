@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>prestancedesign</groupId>
   <artifactId>get-port</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <name>get-port</name>
   <description>Get an available TCP port for Clojure</description>
   <url>https://github.com/prestancedesign/get-port</url>
@@ -38,10 +38,6 @@
     <repository>
       <id>clojars</id>
       <url>https://repo.clojars.org/</url>
-    </repository>
-    <repository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
     </repository>
   </repositories>
   <distributionManagement>

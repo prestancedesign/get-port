@@ -11,12 +11,12 @@ The latest versions on Clojar
 For `deps.edn`:
 
 ```clojure
-prestancedesign/get-port {:mvn/version "0.1.0"}
+prestancedesign/get-port {:mvn/version "0.1.1"}
 ```
 For `project.clj`:
 
 ```clojure
-[prestancedesign/get-port "0.1.0"]
+[prestancedesign/get-port "0.1.1"]
 ```
 
 ## Usage
@@ -37,7 +37,7 @@ Pass in a preferred port:
 (get-port {:port 3000})
 ```
 
-Pass in an array of preferred ports:
+Pass in a vector of preferred ports:
 
 ```clojure
 (get-port {:port [3000 3004 3010]})
