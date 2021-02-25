@@ -23,25 +23,31 @@ For `project.clj`:
 
 ```clojure
 (ns hello-world.core
-  (:require [prestancedesign.get-port :refer [get-port]]
+  (:require [prestancedesign.get-port :refer [get-port make-range]]
             [ring.adapter.jetty :as server]))
 
 ...
 
-(server/run-jetty handler {:port (get-port)}) ; Get a random port
+(server/run-jetty handler {:port (get-port)}) ; Get a random available port
 ```
 
 Pass in a preferred port:
 
-    (get-port {:port 3000})
+```clojure
+(get-port {:port 3000})
+```
 
 Pass in an array of preferred ports:
 
-    (get-port {:port [3000 3004 3010]})
+```clojure
+(get-port {:port [3000 3004 3010]})
+```
 
-Use the `make-range` helper in case you need a port in a certain range:
+Use the `make-range` helper in case you need a port in a certain (inclusive) range:
 
-    (get-port {:port (make-range 3000 3005)})
+```clojure
+(get-port {:port (make-range 3000 3005)})
+```
 
 Copyright © 2020 Michaël SALIHI
 
