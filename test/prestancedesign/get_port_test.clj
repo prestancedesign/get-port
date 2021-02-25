@@ -4,9 +4,8 @@
   (:import (java.net ServerSocket BindException)))
 
 (defn port-binding-setup [f]
-  (let [socket (ServerSocket. 3000)]
-    (f)
-    (.close socket)))
+  (with-open [_ (ServerSocket. 3000)]
+    (f)))
 
 (use-fixtures :each port-binding-setup)
 
@@ -25,4 +24,4 @@
   (testing "Test binding from first port available inside a range"
     (is (= 3001 (get-port {:port (make-range 3000 3005)}))))
   (testing "Test binding an already used port"
-    (is (thrown? java.net.BindException (get-port 3000)))))
+    (is (thrown? BindException (get-port 3000)))))
