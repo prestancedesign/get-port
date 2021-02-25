@@ -3,9 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>prestancedesign</groupId>
   <artifactId>get-port</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.0</version>
   <name>get-port</name>
-  <description>FIXME: my new library.</description>
+  <description>Get an available TCP port for Clojure</description>
   <url>https://github.com/prestancedesign/get-port</url>
   <licenses>
     <license>
