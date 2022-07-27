@@ -1,0 +1,7 @@
+* Tasks
+** TODO Make the library production friendly with allowing protected ports and fallback when permission denied
+   - https://serverfault.com/questions/112795/how-to-run-a-server-on-port-80-as-a-normal-user-on-linux
+   - https://stackoverflow.com/questions/13239972/how-do-you-implement-a-re-try-catch
+   - https://stackoverflow.com/questions/1879885/clojure-how-to-to-recur-upon-exception
+** TODO Add exclude option
+** TODO Add Malli or Clojure spec

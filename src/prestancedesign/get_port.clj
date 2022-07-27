@@ -29,14 +29,18 @@
            (try
              (get-available-port (if (number? port) port (first port)))
              (catch Exception e (instance? BindException (.getCause e))))]
-       (or result (recur (next port)))))))
+       (or result (recur (if (number? port) 0 (next port))))))))
 
 (comment
 
   (get-port)
+
   (get-port {:port 80})
+
   (get-port {:port 3000})
+
   (get-port {:port [3000 3004 3010]})
+
   (get-port {:port (make-range 3000 3005)})
 
   ;; Bind a range of port for testing
