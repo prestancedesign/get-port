@@ -1,18 +1,18 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.10.3"}}
+ :deps {org.clojure/clojure {:mvn/version "1.12.0"}}
  :aliases
  {:test
   {:extra-paths ["test"]
-   :extra-deps {com.cognitect/test-runner
-                {:git/url "https://github.com/cognitect-labs/test-runner"
-                 :sha "4e7e1c0dfd5291fa2134df052443dc29695d8cbe"}}
+   :extra-deps {io.github.cognitect-labs/test-runner
+                {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+   :main-opts ["-m" "cognitect.test-runner"]
    :exec-fn cognitect.test-runner.api/test}
-  :jar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.278"}}
+  :jar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}
         :exec-fn hf.depstar/jar
         :exec-args {:jar "get-port.jar" :sync-pom true}}
-  :install {:replace-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}
+  :install {:replace-deps {slipset/deps-deploy {:mvn/version "0.2.2"}}
             :exec-fn deps-deploy.deps-deploy/deploy
             :exec-args {:installer :local :artifact "get-port.jar"}}
-  :deploy {:replace-deps {slipset/deps-deploy {:mvn/version "0.1.5"}}
+  :deploy {:replace-deps {slipset/deps-deploy {:mvn/version "0.2.2"}}
            :exec-fn deps-deploy.deps-deploy/deploy
            :exec-args {:installer :remote :artifact "get-port.jar"}}}}
