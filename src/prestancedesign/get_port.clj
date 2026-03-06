@@ -16,26 +16,29 @@
 
 (defn get-port
   "Get an available TCP port according to the supplied options.
-
   - A preferred port: (get-port {:port 3000})
   - A vector of preferred ports: (get-port {:port [3000 3004 3010]})
   - Use the `make-range` helper in case you need a port in a certain (inclusive) range: (get-port {:port (make-range 3000 3005)})
-
+  - Use :fallback true to return a random port if no preferred port is available: (get-port {:port 80 :fallback true})
   No args return a random available port"
   ([] (get-available-port))
-  ([opts]
-   (loop [port (:port opts)]
-     (let [result
-           (try
-             (get-available-port (if (number? port) port (first port)))
-             (catch Exception e (instance? BindException (.getCause e))))]
-       (or result (recur (if (number? port) 0 (next port))))))))
+  ([{:keys [port fallback]}]
+   (loop [candidates (if (integer? port) [port] (seq port))]
+     (if (empty? candidates)
+       (when fallback (get-available-port))
+       (let [result (try
+                      (get-available-port (first candidates))
+                      (catch BindException _e nil)
+                      (catch Exception e (throw e)))]
+         (or result (recur (rest candidates))))))))
 
 (comment
 
   (get-port)
 
   (get-port {:port 80})
+
+  (get-port {:port 80 :fallback true})
 
   (get-port {:port 3000})
 

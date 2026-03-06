@@ -49,6 +49,12 @@ Use the `make-range` helper in case you need a port in a certain (inclusive) ran
 (get-port {:port (make-range 3000 3005)})
 ```
 
-Copyright © 2020-2021 Michaël SALIHI
+Use `:fallback true` to return a random available port when none of the preferred ports are available, instead of `nil`:
+```clojure
+(get-port {:port 3000 :fallback true})
+(get-port {:port [3000 3004 3010] :fallback true})
+```
+
+Copyright © 2020-2024 Michaël SALIHI
 
 Distributed under the Eclipse Public License, the same as Clojure.
