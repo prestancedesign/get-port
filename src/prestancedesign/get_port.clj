@@ -9,9 +9,9 @@
      (.getLocalPort socket))))
 
 (defn make-range
-  "Make a range of ports.
-  Must be in the range 1024...65535"
+  "Make an inclusive range of ports, must be between 1024 and 65535"
   [from to]
+  {:pre [(>= from 1024) (<= to 65535) (<= from to)]}
   (range from (inc to)))
 
 (defn get-port
@@ -45,6 +45,9 @@
   (get-port {:port [3000 3004 3010]})
 
   (get-port {:port (make-range 3000 3005)})
+
+  ;; Demonstrates make-range validation - will throw AssertionError
+  (get-port {:port (make-range 30 3333005)})
 
   ;; Bind a range of port for testing
   (doseq [port (range 3000 3005)]

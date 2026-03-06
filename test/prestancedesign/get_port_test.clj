@@ -11,7 +11,14 @@
 
 (deftest make-range-test
   (testing "Generating port range"
-    (is (= [3000 3001 3002 3003 3004 3005] (make-range 3000 3005)))))
+    (is (= [3000 3001 3002 3003 3004 3005] (make-range 3000 3005))))
+  (testing "Throws on port below 1024"
+    (is (thrown? AssertionError (make-range 80 3000))))
+  (testing "Throws on port above 65535"
+    (is (thrown? AssertionError (make-range 3000 70000))))
+  (testing "Throws when from is greater than to"
+    (is (thrown? AssertionError (make-range 3005 3000)))))
+
 
 (deftest get-port-test
   (testing "Test binding from a valid random port"
