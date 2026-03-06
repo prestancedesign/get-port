@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>prestancedesign</groupId>
   <artifactId>get-port</artifactId>
-  <version>0.1.1</version>
+  <version>0.2.0</version>
   <name>get-port</name>
   <description>Get an available TCP port for Clojure</description>
   <url>https://github.com/prestancedesign/get-port</url>
@@ -28,7 +28,7 @@
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
-      <version>1.12.0</version>
+      <version>1.12.4</version>
     </dependency>
   </dependencies>
   <build>

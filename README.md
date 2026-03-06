@@ -11,12 +11,12 @@ The latest versions on Clojar
 For `deps.edn`:
 
 ```clojure
-prestancedesign/get-port {:mvn/version "0.1.1"}
+prestancedesign/get-port {:mvn/version "0.2.0"}
 ```
 For `project.clj`:
 
 ```clojure
-[prestancedesign/get-port "0.1.1"]
+[prestancedesign/get-port "0.2.0"]
 ```
 
 ## Usage
