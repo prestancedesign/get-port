@@ -1,8 +1,10 @@
 # get-port
 
-Get an available TCP port for Clojure.
+A small Clojure library to find an available TCP port.
 
-The latest versions on Clojar
+Useful for tests, development servers, or any situation where a free port is needed dynamically.
+
+The latest version is available on Clojars:
 
 [![Clojars Project](https://clojars.org/prestancedesign/get-port/latest-version.svg)](https://clojars.org/prestancedesign/get-port)
 
@@ -11,15 +13,21 @@ The latest versions on Clojar
 For `deps.edn`:
 
 ```clojure
-prestancedesign/get-port {:mvn/version "0.2.0"}
+{:deps {prestancedesign/get-port {:mvn/version "0.2.0"}}}
 ```
+
 For `project.clj`:
 
 ```clojure
 [prestancedesign/get-port "0.2.0"]
 ```
 
-## Usage
+## API
+
+- `get-port` — Find an available TCP port
+- `make-range` — Create an inclusive port range
+
+## Examples
 
 ```clojure
 (ns hello-world.core
@@ -31,7 +39,7 @@ For `project.clj`:
 (server/run-jetty handler {:port (get-port)}) ; Get a random available port
 ```
 
-Pass in a preferred port:
+Try a preferred port:
 
 ```clojure
 (get-port {:port 3000})
@@ -43,17 +51,21 @@ Pass in a vector of preferred ports:
 (get-port {:port [3000 3004 3010]})
 ```
 
-Use the `make-range` helper in case you need a port in a certain (inclusive) range:
+Use the `make-range` helper to search within an inclusive port range:
 
 ```clojure
 (get-port {:port (make-range 3000 3005)})
 ```
 
-Use `:fallback true` to return a random available port when none of the preferred ports are available, instead of `nil`:
+Use `:fallback true` to return a random available port when none of the preferred ports are available.
+Otherwise `nil` is returned.
+
 ```clojure
 (get-port {:port 3000 :fallback true})
 (get-port {:port [3000 3004 3010] :fallback true})
 ```
+
+## License
 
 Copyright © 2020-2024 Michaël SALIHI
 
